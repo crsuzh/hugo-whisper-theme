@@ -4,15 +4,33 @@
 {{ define "header_classes" }}{{ end }}
 
 {{ define "meta_tags" }}
-<meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
-<meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
-<meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
-<meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
-<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
-<meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
-<meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
-<meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
-<meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+  {{ if .Site.Params.homepage_meta_tags.meta_description }}
+  <meta name="description" content="{{ .Site.Params.homepage_meta_tags.meta_description }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_og_title }}
+  <meta property="og:title" content="{{ .Site.Params.homepage_meta_tags.meta_og_title }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_og_type }}
+  <meta property="og:type" content="{{ .Site.Params.homepage_meta_tags.meta_og_type }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_og_url }}
+  <meta property="og:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_url }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_og_image }}
+  <meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_og_description }}
+  <meta property="og:description" content="{{ .Site.Params.homepage_meta_tags.meta_og_description }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_twitter_card }}
+  <meta name="twitter:card" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_card }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_twitter_site }}
+  <meta name="twitter:site" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_site }}" />
+  {{ end }}
+  {{ if .Site.Params.homepage_meta_tags.meta_twitter_creator }}
+  <meta name="twitter:creator" content="{{ .Site.Params.homepage_meta_tags.meta_twitter_creator }}" />
+  {{ end }}
 {{ end }}
 
 {{ define "main" }}
@@ -28,9 +46,11 @@
           <p>{{ .Site.Params.homepage_intro }}</p>
           {{ end }}
         </div>
+        {{ if .Site.Params.homepage_button_link }}
         <a class="button button-primary mb-2" href="{{ .Site.Params.homepage_button_link | relURL }}">
           {{ .Site.Params.homepage_button_text }}
         </a>
+        {{ end }}
       </div>
     </div>
   </div>

@@ -1,13 +1,15 @@
+{{ if .Site.Params.footer_link.footer_link_url }}
 <div class="sub-footer">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="sub-footer-inner">
           <ul>
-            <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
+            <li class="zerostatic"><a href="{{ .Site.Params.footer_link.footer_link_url }}">{{ .Site.Params.footer_link.footer_link_display }}</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
+{{ end }}
